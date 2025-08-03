@@ -1,0 +1,15 @@
+#container{
+    transition: 4s ease-in;
+}              
+
+.buttonClass{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.buttonClass:hover{
+    background-color: rgb(69, 68, 68);
+}

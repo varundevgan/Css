@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    
+    <div class="flex justify-center items-center w-full h-screen bg-gray-800 ">
+        <div class="absolute z-10 w-[50%] flex justify-between items-center ">
+            <button onclick="leftImage()" class="bg-white text-black w-15 h-15 rounded-full cursor-pointer ml-[-30px]">Left</button>
+            <button onclick="rightImage()" class="bg-white text-black w-15 h-15 rounded-full cursor-pointer mr-[-30px]">Right</button>
+        </div>
+        <div id="maindiv" class="relative w-[50%]  ">
+           <p class="text-white absolute top-0 z-10">Total Length</p>
+         <div id="container" class="overflow-hidden bg-white flex items-center ">
+            <div id="images" class="min-w-full h-full flex ">
+            </div>
+            <div id="buttons" class="absolute bottom-[-30px] mx-auto flex gap-2  justify-center w-full">
+            </div>
+        </div>
+       </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
