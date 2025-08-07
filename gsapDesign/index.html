@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    
+    <div class="w-full h-screen bg-gray-500 flex items-center justify-center">
+        <div id="main" class="flex">
+            <div class="flex flex-col relative">
+                <div id="block1" class=" left-[240px] w-60 h-60 bg-[#e2fefc] rounded-tr-[100%]"></div>
+                <div id="block2" class=" left-[240px] w-60 h-60 bg-[#3e5b7a] rounded-br-[100%]"></div>
+            </div>
+            <div class="flex flex-col">
+                <div id="block3" class="w-60 h-60 bg-[#9bc3d2] rounded-tl-[100%]"></div>
+                <div id="block4" class="w-60 h-60 bg-[#e26151] rounded-bl-[100%]"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    
+    <script>
+        gsap.timeline({repeat:-1})
+        .from('#main',{
+            scale:0,
+            ease: Elastic.easeOut.config(2,1),
+            duration:2,
+            delay:1
+        })
+        .from('#block1, #block2',{
+            x:240,
+            duration:1,
+            delay:1
+        })
+        .from('#block3, #block4',{
+            x:-240,
+            duration:1
+        }, '-=1')
+        .to('#block3, #block4',{
+            y:-120,
+            duration:1
+        })
+        .to('#block1, #block2',{
+            y:120,
+            duration:1
+        },'-=1')
+        .to('#block1, #block2',{
+            scaleX:-1,
+            duration:1
+        })
+        .to('#block3, #block4',{
+            scaleX:-1,
+            duration:1
+        })
+        .to('#block3',{
+            scaleX:1,
+            duration:1
+        })
+        .to('#block2',{
+            scaleX:1
+        })
+        .to('#block1, #block2',{
+            y:0,
+            duration:1
+        })
+        .to('#block3, #block4',{
+            y:0,
+            duration:1
+        })
+        .to('#block2, #block3',{
+            scaleX:-1,
+            duration:1
+        })
+        .to('#main',{
+            scale:0
+        })
+
+
+    </script>
+
+</body>
+</html>
