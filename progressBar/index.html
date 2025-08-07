@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+
+        <section class="w-full h-screen bg-gray-700"></section>
+        <section class="w-full h-screen bg-gray-900 flex items-center justify-center">
+            <!-- main wrap -->
+            <div id="main" class="w-[60%] text-white">
+                <!-- bar -->
+                 <div class="w-full mb-6">
+                    <h2 class="text-xl tracking-[3px] font-[500] flex">HTML/HTML5</h2>
+                    <div id="bar" class="w-full bg-black h-3 rounded-[50px] mt-2 relative"><span class="rounded-[50px] absolute w-[60%] h-full bg-gradient-to-r from-[#f8e447] to-[#ea0053] after:absolute after:content-['60%'] after:w-14 after:h-10 after:bg-white after:right-0 after:top-[-14px] after:bg-gradient-to-r after:from-[#f8e447] after:to-[#ea0053] after:rounded-[50px] after:flex after:justify-center after:items-center after:text-lg after:font-[500] "></span></div>
+                 </div>
+                 <div class="w-full mb-6">
+                    <h2 class="text-xl tracking-[3px] font-[500]">CSS/SCSS</h2>
+                    <div id="bar" class="w-full bg-black h-3 rounded-[50px] mt-2 relative"><span class="rounded-[50px] absolute w-[80%] h-full bg-gradient-to-r from-[#f8e447] to-[#ea0053] after:absolute after:content-['80%'] after:w-14 after:h-10 after:bg-white after:right-0 after:top-[-14px] after:bg-gradient-to-r after:from-[#f8e447] after:to-[#ea0053] after:rounded-[50px] after:flex after:justify-center after:items-center after:text-lg after:font-[500] "></span></div>
+                 </div>
+                 <div class="w-full mb-6">
+                    <h2 class="text-xl tracking-[3px] font-[500]">JAVASCRIPT</h2>
+                    <div id="bar" class="w-full bg-black h-3 rounded-[50px] mt-2 relative"><span class="rounded-[50px] absolute w-[40%] h-full bg-gradient-to-r from-[#f8e447] to-[#ea0053] after:absolute after:content-['40%'] after:w-14 after:h-10 after:bg-white after:right-0 after:top-[-14px] after:bg-gradient-to-r after:from-[#f8e447] after:to-[#ea0053] after:rounded-[50px] after:flex after:justify-center after:items-center after:text-lg after:font-[500] "></span></div>
+                 </div>
+                 <div  class="w-full mb-6">
+                    <h2 class="text-xl tracking-[3px] font-[500]">TYPESCRIPT</h2>
+                    <div id="bar" class="w-full bg-black h-3 rounded-[50px] mt-2 relative"><span class="rounded-[50px] absolute w-[90%] h-full bg-gradient-to-r from-[#f8e447] to-[#ea0053] after:absolute after:content-['90%'] after:w-14 after:h-10 after:bg-white after:right-0 after:top-[-14px] after:bg-gradient-to-r after:from-[#f8e447] after:to-[#ea0053] after:rounded-[50px] after:flex after:justify-center after:items-center after:text-lg after:font-[500] "></span></div>
+                 </div>
+            </div>
+        </section>
+        <section class="w-full h-screen bg-gray-800"></section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+        <script>
+            gsap.from('#bar span',{
+                scrollTrigger:{
+                    trigger:'#main',
+                    toggleActions: 'restart none none reverse'
+                },
+                width: 0,
+                duration:1.5,
+                ease: Power2.easeInOut,
+                stagger:.2,
+                delay:.5 
+            })
+        </script>
+
+</body>
+</html>
