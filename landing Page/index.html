@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+
+    <div class="w-full h-screen bg-black text-white px-30 flex flex-col justify-between overflow-hidden">
+        <header class="flex py-5 w-full items-center justify-between ">
+            <div>
+                <h2 class="text-5xl">LOGO</h2>
+            </div>
+            <div>
+                <ul class="flex items-center text-md uppercase">
+                    <li class="mx-10 relative hover:after:opacity-100 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out after:content-[''] after:absolute after:bottom-0 after:w-0 after:bg-white after:h-[1px] after:left-0 after:opacity-0"><a href="#">Photos</a></li>
+                    <li class="mx-10 relative hover:after:opacity-100 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out after:content-[''] after:absolute after:bottom-0 after:w-0 after:bg-white after:h-[1px] after:left-0 after:opacity-0"><a href="#">About</a></li>
+                    <li class="mx-10 relative hover:after:opacity-100 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out after:content-[''] after:absolute after:bottom-0 after:w-0 after:bg-white after:h-[1px] after:left-0 after:opacity-0"><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="relative">
+            <div id="upper-text" class="relative uppercase text-[120px] tracking-[14px] font-[350] leading-[140px] z-[20]">
+                <h1>Hello, i'm</h1>
+                <h1>A Portraits</h1>
+                <h1 id="photo" class="relative inline after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-500 after:ease-in-out hover:after:w-full">Photographer</h1>
+            </div>
+            <div>
+                <div id="image" class="flex absolute top-[0%]">
+                    <img class="w-90 h-110 object-cover  opacity-0 z-[10]" src="https://images.pexels.com/photos/31211049/pexels-photo-31211049.jpeg" alt="">
+                    <img class="w-90 h-110 object-cover  opacity-0 z-[10]" src="https://images.pexels.com/photos/32357423/pexels-photo-32357423.jpeg" alt="">
+                    <img class="w-90 h-110 object-cover  opacity-0 z-[10]" src="https://images.pexels.com/photos/10543167/pexels-photo-10543167.jpeg" alt="">
+                    <img class="w-90 h-110 object-cover  opacity-0 z-[10]" src="https://images.pexels.com/photos/20828147/pexels-photo-20828147.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="w-full mb-5">
+            <h2 id="below-text" class=" text-center text-xl uppercase  ">American Photographer, Filmmaker and musician</h2>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#upper-text h1, #below-text').lettering()
+
+            gsap.from('#upper-text h1 span ',{
+                x:-30,
+                duration:1,
+                opacity: 0,
+                stagger:0.1,
+            })
+            gsap.to('#image img',{
+                x: 2400,
+                duration: 1,
+                stagger : .14,
+                opacity:0
+            },'-=.9')
+
+            gsap.to('#image img',{
+                x: 900,
+                duration: 1,
+                margin: '0 -260px 0px 0',
+                rotate:15,
+                stagger : .14,
+                opacity:1
+            },'-=.7')
+            gsap.from('#below-text span ',{
+                x:-30,
+                duration:1,
+                opacity: 0,
+                stagger:0.1,
+            },'-=2')
+
+            setTimeout(function(){
+                $('#photo').mouseover(function(){
+                    gsap.to('#image img',{
+                    x: 100,
+                    duration: 1,
+                    margin: '0 20px 0px 0',
+                    rotate:0,
+                    stagger : .14,
+                    opacity:1
+            })
+                })
+                $('#photo').mouseout(function(){
+                    gsap.to('#image img',{
+                   x: 900,
+                    duration: 1,
+                    margin: '0 -260px 0px 0',
+                    rotate:15,
+                    stagger : .14,
+                    opacity:1
+            })
+                })
+        },5000)
+    })
+    </script>
+
+</body>
+</html>
